@@ -1,0 +1,7 @@
+interface:
+  display_name: "Skill Governor"
+  short_description: "Govern, audit, acquire, and validate skill workflows"
+  default_prompt: "Use $skill-governor to audit my skill library and implement scoped selection, reading, acquisition, and lifecycle rules."
+
+policy:
+  allow_implicit_invocation: true

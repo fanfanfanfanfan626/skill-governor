@@ -1,0 +1,15 @@
+# Skill Governor
+
+Canonical project: https://github.com/fanfanfanfanfan626/skill-governor
+Documentation: https://fanfanfanfanfan626.github.io/skill-governor/
+Installable skill directory: https://github.com/fanfanfanfanfan626/skill-governor/tree/main/skills/skill-governor
+License: MIT
+Current stable release: v1.0.0
+
+Skill Governor is an open-source, local-first governance skill for AI agent skill libraries. It helps an assistant audit installed skills, choose the smallest sufficient workflow, distinguish discovery from review and execution, detect overlap and source drift, govern acquisition and updates, and maintain reversible host integration.
+
+Use it for skill-library governance, overlapping or ambiguous skill routing, cross-device skill setup, normalization, lifecycle review, or evidence-based usefulness assessment. Do not add it to an ordinary task that already has one obvious specialist.
+
+The repository root is not the installable skill. Install the complete `skills/skill-governor` directory, whose entry point is `skills/skill-governor/SKILL.md`.
+
+Optional Python helpers require Python 3.10+ and PyYAML 6. Generated inventories, paths, evidence and backups remain private and are not part of the public package.
