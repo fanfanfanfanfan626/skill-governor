@@ -1,0 +1,22 @@
+name: Feature request
+description: Propose a scoped improvement tied to a real skill-governance gap.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: gap
+    attributes:
+      label: Governance gap
+      description: What concrete selection, review, acquisition, update, routing, or retirement failure is not handled?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome and verification
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Privacy, permission, host, and rollback boundaries

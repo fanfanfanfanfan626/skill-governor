@@ -51,6 +51,10 @@ class GovernTests(unittest.TestCase):
             link.symlink_to(target, target_is_directory=directory)
         except (OSError, NotImplementedError) as error:
             self.skipTest("Host does not allow fixture symlinks: " + str(error))
+        # Windows can refuse to remove the temporary parent while a fixture
+        # symlink is still present. Register the link cleanup after the root
+        # cleanup so unittest removes it first (cleanup callbacks are LIFO).
+        self.addCleanup(lambda: link.unlink(missing_ok=True))
 
     def interrupt_final_record(self, operation):
         original = registry.write_json

@@ -19,11 +19,12 @@ jobs:
         python: ['3.10', '3.13']
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
       - run: python -m pip install -r requirements.txt
-      - run: python -m compileall -q skills/skill-governor/scripts tests
+      - run: python -m compileall -q skills/skill-governor/scripts tests tools
+      - run: python tools/build_source_manifest.py --check
       - run: python skills/skill-governor/scripts/audit_skills.py --root skills --format markdown --fail-on-issues
       - run: python -X utf8 -m unittest discover -s tests -v

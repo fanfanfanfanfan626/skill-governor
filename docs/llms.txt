@@ -13,3 +13,7 @@ Use it for skill-library governance, overlapping or ambiguous skill routing, cro
 The repository root is not the installable skill. Install the complete `skills/skill-governor` directory, whose entry point is `skills/skill-governor/SKILL.md`.
 
 Optional Python helpers require Python 3.10+ and PyYAML 6. Generated inventories, paths, evidence and backups remain private and are not part of the public package.
+
+Worked examples: https://github.com/fanfanfanfanfan626/skill-governor/blob/main/EXAMPLES.md
+Compatibility evidence: https://github.com/fanfanfanfanfan626/skill-governor/blob/main/COMPATIBILITY.md
+Support and issue guidance: https://github.com/fanfanfanfanfan626/skill-governor/blob/main/SUPPORT.md

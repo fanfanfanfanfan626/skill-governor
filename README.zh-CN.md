@@ -1,12 +1,12 @@
 # Skill Governor：AI Agent Skill 治理规范
 
-[English](README.md) · [AI 安装说明](AI_INSTALL.md) · [项目主页](https://fanfanfanfanfan626.github.io/skill-governor/) · MIT 开源许可 · 1.0.0
+[English](README.md) · [AI 安装说明](AI_INSTALL.md) · [使用示例](EXAMPLES.md) · [兼容性证据](COMPATIBILITY.md) · [项目主页](https://fanfanfanfanfan626.github.io/skill-governor/) · MIT 开源许可 · 1.0.0
 
 一个开源、本地优先的 AI Agent Skill 治理工具。它把“什么时候用 Skill、先读什么、多个 Skill 怎么选、新增和更新怎么处理、到底有没有用”整理成一套可执行、可审计、可回退的规则。
 
 它是一项通用 Skill。AI 读取真实环境后制定适合当前用户的规则；Python 工具负责只读审计、登记、变更检测、证据一致性检查和可回退的规则接入。个人技能名单、路径和审查记录保留在各自的私有状态目录。
 
-它最适合 Skill 较多、触发范围重叠、存在多个安装来源或需要跨设备迁移的环境。简单任务只有一个明确专家 Skill 时，不需要额外调用它。当前实现以 Codex 为首要宿主，也可以作为指令包迁移到兼容 Skill 文件夹的其他 Agent 宿主；宿主能否发现、持续路由和提供工具权限，仍需分别验证。
+它最适合 Skill 较多、触发范围重叠、存在多个安装来源或需要跨设备迁移的环境。简单任务只有一个明确专家 Skill 时，不需要额外调用它。当前实现以 Codex 为首要宿主，也可以作为指令包迁移到兼容 Skill 文件夹的其他 Agent 宿主；宿主能否发现、持续路由和提供工具权限，仍需分别验证。证据边界见 [COMPATIBILITY.md](COMPATIBILITY.md)。
 
 ## 怎么安装
 
@@ -34,6 +34,8 @@ python -m pip install -r requirements.txt
 > 使用 $skill-governor，检查这个新增 Skill 是否有实际价值、和现有 Skill 怎么分工，再按已授权范围安装和登记。
 
 > 使用 $skill-governor，检查更新后的 Skill，重新审查变动内容和受影响的选择规则。
+
+审计、最小充分选择、安装前审查和跨设备协调的完整可复制示例见 [EXAMPLES.md](EXAMPLES.md)。
 
 ## 它会怎样处理
 
@@ -87,3 +89,13 @@ python -X utf8 -m unittest discover -s tests -v
 发布时只包含通用源文件。不要提交生成的技能清单、个人路径、凭据、项目关联、审查记录或备份；交付前还要检查最终文件清单与压缩包内容。
 
 采用 [MIT 许可证](LICENSE)，允许使用、修改和再分发。被审查的第三方 Skill 仍遵循它们各自的许可证和要求。
+
+仓库源码校验范围与再生成方式见 [SOURCE_INTEGRITY.md](SOURCE_INTEGRITY.md)；已发布压缩包继续使用独立且不可变的校验值。
+
+问题与参与规则见 [SUPPORT.md](SUPPORT.md)、[CONTRIBUTING.md](CONTRIBUTING.md) 和 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)。敏感问题请按 [SECURITY.md](SECURITY.md) 处理，不要公开提交细节。
+
+## 相关项目
+
+- [Mastery Tutor](https://github.com/fanfanfanfanfan626/mastery-tutor)：为兼容的 AI Agent 提供本地优先的掌握式学习。
+- [Idea Council](https://github.com/fanfanfanfanfan626/challenge-and-refine-ideas)：在实施前澄清并反证想法。
+- [Persistent AI Studio](https://github.com/fanfanfanfanfan626/orchestrate-agent-organization)：治理跨任务、已经获得授权的多 Agent 产品工作。

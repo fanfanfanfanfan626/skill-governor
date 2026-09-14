@@ -1,6 +1,9 @@
 # Skill Governor
 
-[中文说明](README.zh-CN.md) · [Install guide](AI_INSTALL.md) · [Documentation](https://fanfanfanfanfan626.github.io/skill-governor/) · MIT · Version 1.0.0
+[中文说明](README.zh-CN.md) · [Install guide](AI_INSTALL.md) · [Examples](EXAMPLES.md) · [Compatibility](COMPATIBILITY.md) · [Documentation](https://fanfanfanfanfan626.github.io/skill-governor/) · MIT · Version 1.0.0
+
+[![Validation](https://github.com/fanfanfanfanfan626/skill-governor/actions/workflows/tests.yml/badge.svg)](https://github.com/fanfanfanfanfan626/skill-governor/actions/workflows/tests.yml)
+
 
 An open-source, local-first governance skill for AI agent skill libraries. It helps an assistant decide when a skill is useful, choose the smallest sufficient workflow, read required instructions, detect overlap and drift, and review additions or updates without creating skill sprawl.
 
@@ -23,7 +26,7 @@ The AI performs source review and contextual judgment. Python helpers handle dis
 
 Skill Governor is most useful when an assistant has many skills, overlapping triggers, multiple installation roots, or copies that move between devices. It is intentionally unnecessary for a simple task with one obvious specialist.
 
-It is Codex-first and also usable as an instruction package on other agent hosts that support compatible skill folders. Host discovery, persistent routing and tool permissions must be verified separately; copying the folder alone does not prove compatibility.
+It is Codex-first and also usable as an instruction package on other agent hosts that support compatible skill folders. Host discovery, persistent routing and tool permissions must be verified separately; copying the folder alone does not prove compatibility. See [COMPATIBILITY.md](COMPATIBILITY.md) for the evidence boundary.
 
 ## Install
 
@@ -51,6 +54,8 @@ Suggested requests:
 > Use $skill-governor to reassess this updated skill and test the affected selection rules. Do not renew old reviews just because the inventory refreshed.
 
 The assistant works in the user's language. With an existing governance policy it should reconcile that policy, not create a competing one. If the host has no verified persistent entrypoint, it supplies an explicit-use workflow and reports that limitation.
+
+For audit-only, minimum-sufficient selection, pre-install review, and cross-device prompts with expected result shapes, see [EXAMPLES.md](EXAMPLES.md).
 
 ## Optional CLI
 
@@ -97,3 +102,13 @@ Contributions should include a concrete routing or lifecycle failure, a scoped c
 ## License
 
 [MIT](LICENSE). The installed skill folder includes its own copy of the license. Third-party skills inspected by Skill Governor retain their own licenses and policies.
+
+Repository-source checksum scope and regeneration are documented in [SOURCE_INTEGRITY.md](SOURCE_INTEGRITY.md); the published package keeps its separate immutable checksum.
+
+Questions and contribution standards are documented in [SUPPORT.md](SUPPORT.md), [CONTRIBUTING.md](CONTRIBUTING.md), and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Report sensitive problems through [SECURITY.md](SECURITY.md), not a public Issue.
+
+## Related projects
+
+- [Mastery Tutor](https://github.com/fanfanfanfanfan626/mastery-tutor) provides local-first mastery learning across compatible AI-agent hosts.
+- [Idea Council](https://github.com/fanfanfanfanfan626/challenge-and-refine-ideas) clarifies and stress-tests ideas before implementation.
+- [Persistent AI Studio](https://github.com/fanfanfanfanfan626/orchestrate-agent-organization) governs authorized multi-agent product work across tasks.
