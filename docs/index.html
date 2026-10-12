@@ -27,7 +27,7 @@
     "url": "https://fanfanfanfanfan626.github.io/skill-governor/",
     "license": "https://opensource.org/license/mit",
     "programmingLanguage": ["Markdown", "Python"],
-    "version": "1.0.0"
+    "version": "1.1.0"
   }
   </script>
   <style>
@@ -41,12 +41,20 @@
     <p>Open source · Local first · MIT</p>
     <h1>Govern AI skills without creating skill sprawl.</h1>
     <p class="lead">Skill Governor helps an AI assistant audit its real skill library, choose the smallest sufficient workflow, track evidence and source drift, and keep host integration reversible.</p>
-    <div class="actions"><a class="button primary" href="https://github.com/fanfanfanfanfan626/skill-governor/releases/latest">Download v1.0.0</a><a class="button" href="https://github.com/fanfanfanfanfan626/skill-governor/blob/main/README.zh-CN.md">中文说明</a></div>
+    <div class="actions"><a class="button primary" href="#try">Try a read-only check</a><a class="button" href="https://github.com/fanfanfanfanfan626/skill-governor/releases">Verified releases</a><a class="button" href="https://github.com/fanfanfanfanfan626/skill-governor/blob/main/README.zh-CN.md">中文说明</a></div>
   </header>
   <section class="grid" aria-label="Core capabilities">
     <article class="card"><h2>Choose less</h2><p>Select the smallest sufficient skill set—including no extra skill for ordinary work.</p></article>
     <article class="card"><h2>Keep states honest</h2><p>Separate discovery, source review, tool readiness, execution, verification and acceptance.</p></article>
     <article class="card"><h2>Stay reversible</h2><p>Keep private state outside packages and journal authorized host-rule changes for rollback.</p></article>
+  </section>
+  <section class="section" id="try">
+    <h2>Check a skill ZIP before you install it</h2>
+    <p>Download the source repository. With Python 3.10 or newer, run this from its root—no account, API key or Python dependencies needed for this check:</p>
+    <pre class="code"><code>python skills/skill-governor/scripts/audit_bundle.py path/to/a-skill.zip</code></pre>
+    <p>The JSON reports layout, path, manifest and size problems. Exit 0 means these structural checks passed; 1 means findings; 2 means incomplete inspection. Nothing is extracted, executed, installed or uploaded. Output may include local paths: keep it private or redact before sharing.</p>
+    <p><strong>This is not a security certificate.</strong> Read the source and verify the target host separately. <a href="https://github.com/fanfanfanfanfan626/skill-governor/blob/main/skills/skill-governor/references/bundle-audit.md">Check scope, limits and examples →</a></p>
+    <p lang="zh-CN">先检查，再安装。只读扫描技能文件夹或 ZIP，找出目录、命名、重复文件与体积问题；不会自动执行或上传你的技能，也不保证它安全或有用。</p>
   </section>
   <section class="section">
     <h2>Install the package, not the repository root</h2>
@@ -57,7 +65,7 @@
     <h2>Built for real governance work</h2>
     <p>Use it when skills overlap, live in multiple roots, move between devices, or need evidence-based acquisition and retirement decisions. It is intentionally not an always-on wrapper for every task.</p>
   </section>
-  <footer>Skill Governor v1.0.0 · MIT License · <a href="https://github.com/fanfanfanfanfan626/skill-governor/blob/main/AI_INSTALL.md">AI installation contract</a> · <a href="llms.txt">llms.txt</a></footer>
+  <footer>Source v1.1.0 · MIT License · <a href="https://github.com/fanfanfanfanfan626/skill-governor/blob/main/AI_INSTALL.md">AI installation contract</a> · <a href="llms.txt">llms.txt</a></footer>
 </main>
 </body>
 </html>

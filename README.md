@@ -1,6 +1,6 @@
 # Skill Governor
 
-[中文说明](README.zh-CN.md) · [Install guide](AI_INSTALL.md) · [Examples](EXAMPLES.md) · [Compatibility](COMPATIBILITY.md) · [Documentation](https://fanfanfanfanfan626.github.io/skill-governor/) · MIT · Version 1.0.0
+[中文说明](README.zh-CN.md) · [Install guide](AI_INSTALL.md) · [Examples](EXAMPLES.md) · [Compatibility](COMPATIBILITY.md) · [Documentation](https://fanfanfanfanfan626.github.io/skill-governor/) · MIT · Source version 1.1.0
 
 [![Validation](https://github.com/fanfanfanfanfan626/skill-governor/actions/workflows/tests.yml/badge.svg)](https://github.com/fanfanfanfanfan626/skill-governor/actions/workflows/tests.yml)
 
@@ -10,6 +10,16 @@ An open-source, local-first governance skill for AI agent skill libraries. It he
 Ask the assistant to use **`$skill-governor`**. It inspects the actual environment, drafts a scoped policy, and implements authorized local setup. Policies and inventories belong to each user's private state; this repository contains the reusable instructions and tools.
 
 ## What it does
+
+### Try one useful check before installing
+
+Clone/download this repository, then run from its root:
+
+```sh
+python skills/skill-governor/scripts/audit_bundle.py path/to/a-skill.zip
+```
+
+Python 3.10+ is sufficient for this command; no API key or dependency install. It checks one complete skill directory or ZIP without extracting, executing, installing or uploading it. Exit `0` means structural checks passed, `1` means findings, and `2` means inspection could not complete. It does **not** certify safety, usefulness or host support. The JSON may contain private local paths: redact it before sharing. [Exact limits and sample output](skills/skill-governor/references/bundle-audit.md).
 
 - Inventories explicitly selected skill roots, with namespaces for equal names.
 - Reviews actual scope, prerequisites, dependencies and overlapping workflows.
@@ -95,7 +105,7 @@ python skills/skill-governor/scripts/audit_skills.py --root skills --format mark
 python -X utf8 -m unittest discover -s tests -v
 ```
 
-The current suite contains 63 unit tests. Tests use temporary local fixtures and do not change personal host configuration. CI is configured for Windows, Linux and macOS with Python 3.10 and 3.13; a configured matrix is not evidence that remote jobs have run. Report actual tested platforms and results for each release.
+Tests use temporary local fixtures and do not change personal host configuration. CI runs governance and adversarial bundle tests plus reproducible packaging on Windows, Linux and macOS with Python 3.10 and 3.13. Check the linked workflow for actual results; structural tests do not prove real-task usefulness.
 
 Contributions should include a concrete routing or lifecycle failure, a scoped correction and relevant positive/negative cases. Keep source instructions separate from generated private state. Do not add automated deletion, telemetry or external actions without an explicit design and user authorization model.
 
