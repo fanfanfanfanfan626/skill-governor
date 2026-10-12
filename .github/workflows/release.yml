@@ -1,0 +1,25 @@
+name: release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r requirements.txt
+      - name: Match immutable version
+        run: test "$GITHUB_REF_NAME" = "v$(tr -d '\r\n' < VERSION)"
+      - run: python tools/build_source_manifest.py --check
+      - run: python -m unittest discover -s tests -v
+      - run: python tools/build_release.py
+      - run: python tools/build_release.py --check
+      - name: Publish verified bundle
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/skill-governor-"$GITHUB_REF_NAME".zip dist/skill-governor-"$GITHUB_REF_NAME".zip.sha256 --verify-tag --title "Skill Governor $GITHUB_REF_NAME" --generate-notes

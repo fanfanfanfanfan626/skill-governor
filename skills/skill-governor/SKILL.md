@@ -13,6 +13,7 @@ Build a small, evidence-based operating policy for the user's actual skills. Wor
 |---|---|---|
 | Set up persistent governance | Discover verified roots, inventory, review, create a private policy, then integrate within authorization | [setup.md](references/setup.md), [selection.md](references/selection.md), and [hosts.md](references/hosts.md) for a new host |
 | Audit existing skills | Perform read-only source and contract review; report overlaps, drift, and missing dependencies | [evaluation.md](references/evaluation.md) |
+| Check one distributable directory or ZIP | Run a read-only structural preflight; do not equate passing structure with trustworthy behavior | [bundle-audit.md](references/bundle-audit.md) |
 | Choose skills for one task | Identify scope and stage, then choose the smallest sufficient set, possibly none | [selection.md](references/selection.md) |
 | Normalize or repair a skill | Preserve its domain behavior, tighten triggers and structure, then validate positive and negative routes | [normalization-standard.md](references/normalization-standard.md) |
 | Acquire a missing skill | Prove a reusable-procedure gap, search trusted sources, apply the automatic-install gate, then verify | [acquisition-policy.md](references/acquisition-policy.md), [lifecycle.md](references/lifecycle.md) |

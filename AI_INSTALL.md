@@ -6,7 +6,7 @@
 - Skill name: `skill-governor`
 - Installable directory: `skills/skill-governor`
 - Entry point: `skills/skill-governor/SKILL.md`
-- Current release: `v1.0.0`
+- Source version: `v1.1.0`; verify the corresponding asset exists on Releases before reporting it as published.
 - Runtime for optional helpers: Python 3.10+ and PyYAML 6
 
 Do not search for a root-level `SKILL.md`; this repository intentionally keeps the installable package under `skills/skill-governor`. Do not install the repository root as though it were the skill folder.
@@ -15,7 +15,7 @@ Do not search for a root-level `SKILL.md`; this repository intentionally keeps t
 
 1. Inspect the target host's supported skill roots and check for an existing `skill-governor` installation.
 2. Download the release archive or clone this repository.
-3. Copy the complete `skills/skill-governor` directory into one verified skill root. Preserve all references, scripts, metadata and the included license.
+3. Copy the complete `skills/skill-governor` source directory (or the `skill-governor` top-level directory from the release ZIP) into one verified skill root. Preserve all references, scripts, metadata and the included license.
 4. Never copy generated governance state, local inventories, absolute paths, evidence records, backups or credentials into the skill package.
 5. Reload the host through its documented mechanism and verify that the exact `skill-governor` entry is exposed.
 6. Read the complete `SKILL.md` before use. Load only the reference files required for the selected governance mode.

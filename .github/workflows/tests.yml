@@ -28,3 +28,5 @@ jobs:
       - run: python tools/build_source_manifest.py --check
       - run: python skills/skill-governor/scripts/audit_skills.py --root skills --format markdown --fail-on-issues
       - run: python -X utf8 -m unittest discover -s tests -v
+      - run: python tools/build_release.py
+      - run: python tools/build_release.py --check

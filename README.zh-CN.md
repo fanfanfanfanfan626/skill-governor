@@ -1,6 +1,16 @@
 # Skill Governor：AI Agent Skill 治理规范
 
-[English](README.md) · [AI 安装说明](AI_INSTALL.md) · [使用示例](EXAMPLES.md) · [兼容性证据](COMPATIBILITY.md) · [项目主页](https://fanfanfanfanfan626.github.io/skill-governor/) · MIT 开源许可 · 1.0.0
+## 先试一次，只读检查
+
+下载本仓库后，在仓库根目录运行（Python 3.10+，此命令不需要额外依赖或账号）：
+
+```sh
+python skills/skill-governor/scripts/audit_bundle.py path/to/a-skill.zip
+```
+
+1.1.0 源码新增安装前检查：支持一个完整 Skill 目录或 ZIP，检查目录结构、路径、重复文件、元数据和体积限制。退出码 0 表示结构通过，1 表示有问题，2 表示检查未完成。它不会解压、执行、安装或上传，也不证明安全、兼容或有效。报告可能含本机路径，公开前请脱敏。[范围与限制](skills/skill-governor/references/bundle-audit.md)。实际发布包与校验值以 [Releases](https://github.com/fanfanfanfanfan626/skill-governor/releases) 为准。
+
+[English](README.md) · [AI 安装说明](AI_INSTALL.md) · [使用示例](EXAMPLES.md) · [兼容性证据](COMPATIBILITY.md) · [项目主页](https://fanfanfanfanfan626.github.io/skill-governor/) · MIT 开源许可 · 源码 1.1.0
 
 一个开源、本地优先的 AI Agent Skill 治理工具。它把“什么时候用 Skill、先读什么、多个 Skill 怎么选、新增和更新怎么处理、到底有没有用”整理成一套可执行、可审计、可回退的规则。
 
@@ -84,7 +94,7 @@ python skills/skill-governor/scripts/audit_skills.py --root skills --format mark
 python -X utf8 -m unittest discover -s tests -v
 ```
 
-当前包含 63 项单元测试，全部使用临时目录。仓库已配置 Windows、Linux、macOS 和 Python 3.10/3.13 的 CI；是否通过必须看实际运行结果，不能把配置当成测试证据。
+测试覆盖治理、回退、恶意 ZIP 边界和打包顺序，使用临时目录，不修改个人宿主配置。CI 在 Windows、Linux、macOS 和 Python 3.10/3.13 上分别构建并自检；是否通过必须看实际运行结果，不能把配置当成测试证据。
 
 发布时只包含通用源文件。不要提交生成的技能清单、个人路径、凭据、项目关联、审查记录或备份；交付前还要检查最终文件清单与压缩包内容。
 

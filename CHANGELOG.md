@@ -2,7 +2,11 @@
 
 All notable changes to Skill Governor are documented here.
 
-## Unreleased
+## 1.1.0 - 2026-10-12
+
+- Add a read-only directory/ZIP preflight for portable skill bundles, with bounded manifest inspection, path and duplicate checks, and machine-readable findings.
+- Document current OpenAI Skills API package constraints separately from local inspection guards. Passing is not a security or compatibility certification.
+- Add adversarial ZIP fixtures and reproducible release packaging; preserve existing private-state formats and routing behavior.
 
 - Add examples, compatibility guidance, contribution and support paths, and community health templates.
 - Improve GitHub Pages metadata, machine-readable discovery links, social preview support, and crawlability.
